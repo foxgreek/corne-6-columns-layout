@@ -2,20 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Add the remote for the nice!view driver if it's in a different repository
-    - name: niceview-remote
-      url-base: https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/nice_view
-
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # Add the nice!view driver project
-    - name: niceview-driver
-      remote: niceview-remote
-      path: app/drivers/niceview
-      revision: main  # Use the appropriate branch or tag
-
   self:
     path: config
