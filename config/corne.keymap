@@ -55,10 +55,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL       &kp AT_SIGN        &kp LS(NUMBER_3)  &kp DLLR    &kp PRCNT    &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)        &kp LS(MINUS)   &kp LS(EQUAL)
-&kp LCTRL  &kp DEL        &kp RA(L)          &kp RA(E)         &kp LS(F6)  &kp PIPE     &kp MINUS         &kp EQUAL   &kp RA(N5)  &kp RA(NUMBER_6)  &kp LS(RA(N7))  &kp LS(HASH)
-&kp LSHFT  &kp BACKSLASH  &kp LS(BACKSLASH)  &trans            &trans      &kp EQUAL    &kp LS(MINUS)     &kp PLUS    &kp RA(N8)  &kp RA(N9)        &kp RA(N7)      &kp RA(N)
-                                             &kp LGUI          &trans      &kp SPACE    &kp RET           &trans      &kp RALT
+&kp TAB    &kp EXCL   &kp AT_SIGN        &kp LS(NUMBER_3)  &kp DLLR    &kp PRCNT    &kp LS(NUMBER_6)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)        &kp LS(MINUS)   &kp LS(EQUAL)
+&kp LCTRL  &kp DEL    &kp RA(L)          &kp RA(E)         &kp LS(F6)  &kp PIPE     &kp MINUS         &kp EQUAL   &kp RA(N5)  &kp RA(NUMBER_6)  &kp LS(RA(N7))  &kp LS(HASH)
+&kp LSHFT  &kp GRAVE  &kp LS(BACKSLASH)  &trans            &trans      &kp EQUAL    &kp LS(MINUS)     &kp PLUS    &kp RA(N8)  &kp RA(N9)        &kp RA(N7)      &kp RA(N)
+                                         &kp LGUI          &trans      &kp SPACE    &kp RET           &trans      &kp RALT
             >;
 
             label = "Special";
