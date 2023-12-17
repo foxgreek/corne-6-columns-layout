@@ -38,7 +38,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB          &kp N1       &kp N2          &kp N3            &kp N4      &kp N5           &kp N6                &kp N7          &kp N8    &kp N9          &kp N0           &kp BSPC
+&kp TAB          &kp N1       &kp N2          &kp N3            &kp N4      &kp N5           &kp N6                &kp N7          &kp N8    &kp N9          &kp N0           &kp LEFT_BRACKET
 &kp LA(LS(TAB))  &kp LA(TAB)  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans           &kp C_BRIGHTNESS_INC  &kp LEFT_ARROW  &kp UP    &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp CAPSLOCK
 &kp LSHFT        &trans       &bt BT_PRV      &bt BT_SEL 2      &bt BT_NXT  &kp LG(SPACE)    &kp C_BRIGHTNESS_DEC  &trans          &trans    &trans          &trans           &trans
                                               &kp LGUI          &trans      &kp SPACE        &kp RET               &trans          &kp RALT
