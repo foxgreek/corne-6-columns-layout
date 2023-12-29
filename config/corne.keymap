@@ -12,6 +12,12 @@
     };
 
     behaviors {
+        tap_or_layer {
+            compatible = "zmk,behavior-tap-or-layer";
+            label = "TAP_OR_LAYER";
+            tap = <&kp TAP_CODE>;
+            hold = <&mo LAYER_NAME>;
+        };
     };
 
     keymap {
