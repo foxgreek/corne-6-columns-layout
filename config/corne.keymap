@@ -10,6 +10,27 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        show_arrows_macro: show_arrows_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mo 4>;
+            label = "SHOW_ARROWS_MACRO";
+        };
+    };
+
+    behaviors {
+        show_arrows: show_arrows {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHOW_ARROWS";
+            bindings = <&show_arrows_macro>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            hold-trigger-key-positions = <16>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -30,49 +51,48 @@
             label = "Base";
         };
 
-        lower {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        SYM-R {
             bindings = <
-&kp TAB          &kp N1         &kp N2          &kp N3            &kp N4      &kp N5           &kp N6                &kp N7          &kp N8          &kp N9           &kp N0  &kp LEFT_BRACKET
-&kp LS(LC(TAB))  &kp LC(TAB)    &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp LS(LC(F))    &kp C_BRIGHTNESS_INC  &kp LEFT_ARROW  &kp UP          &kp RIGHT_ARROW  &trans  &trans
-&kp LSHFT        &kp LG(GRAVE)  &bt BT_PRV      &bt BT_SEL 1      &bt BT_NXT  &kp LG(SPACE)    &kp C_BRIGHTNESS_DEC  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &kp ESCAPE
-                                                &kp LGUI          &trans      &kp SPACE        &kp RET               &trans          &kp RALT
+&none           &none  &none  &kp LG(TAB)        &kp LS(LG(TAB))        &none     &none             &kp LS(N7)  &kp EXCLAMATION  &kp LS(MINUS)  &none             &none
+&none           &none  &none  &kp LC(TAB)        &kp LS(LC(TAB))        &none     &kp LS(NUMBER_6)  &kp LS(N8)  &kp LS(N9)       &kp RA(N5)     &kp RA(NUMBER_6)  &none
+&kp LEFT_SHIFT  &none  &none  &kp LG(LESS_THAN)  &kp LG(LS(LESS_THAN))  &none     &kp RA(N7)        &kp RA(N8)  &kp RA(N9)       &none          &none             &none
+                              &trans             &trans                 &trans    &trans            &trans      &trans
             >;
 
-            label = "Lower";
+            label = "SYM R";
         };
 
-        upper {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        SYM-L {
             bindings = <
-&kp TAB    &kp EXCL   &kp AT_SIGN    &kp LS(NUMBER_3)  &kp DLLR       &kp PRCNT    &kp LS(NUMBER_6)  &kp LS(N7)         &kp LS(N8)  &kp LS(N9)        &kp LS(N0)      &kp LS(EQUAL)
-&kp LCTRL  &kp DEL    &kp LG(SPACE)  &kp LS(F6)        &kp LS(LC(F))  &kp PIPE     &kp MINUS         &kp RIGHT_BRACKET  &kp RA(N5)  &kp RA(NUMBER_6)  &kp LS(RA(N7))  &kp LS(HASH)
-&kp LSHFT  &kp GRAVE  &kp RA(ENTER)  &kp LC(ENTER)     &kp BACKSLASH  &kp EQUAL    &kp LS(MINUS)     &kp LS(EQUAL)      &kp RA(N8)  &kp RA(N9)        &kp RA(N7)      &kp RA(N)
-                                     &kp LGUI          &trans         &kp SPACE    &kp RET           &trans             &kp RALT
+&none  &none             &kp BACKSLASH      &kp LS(NUMBER_4)  &kp CARET          &kp LS(N5)               &none          &none          &none          &none          &none       &none
+&none  &kp LS(NUMBER_2)  &kp GRAVE          &kp LS(GRAVE)     &kp LS(N0)         &kp LS(RIGHT_BRACKET)    &kp LG(SPACE)  &kp LC(LS(F))  &kp LC(ENTER)  &kp LA(ENTER)  &kp LS(F6)  &none
+&none  &kp LS(RA(N7))    &kp LS(LESS_THAN)  &kp RA(N)         &kp RIGHT_BRACKET  &kp LS(BACKSLASH)        &none          &none          &none          &none          &none       &none
+                                            &trans            &trans             &trans                   &trans         &trans         &trans
             >;
 
-            label = "Upper";
+            label = "SYM L";
         };
 
-        both {
+        number {
             bindings = <
-&kp ESCAPE  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &trans  &bl BL_TOG  &bl BL_DEC         &bl BL_INC       &trans  &trans
-&trans      &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &kp CAPSLOCK
-&trans      &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &trans      &trans             &trans           &trans  &trans
-                             &trans   &trans   &trans    &trans  &trans      &trans
+&trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans    &trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&trans  &kp N1  &kp N2          &kp N3            &kp N4      &kp N5    &kp N6  &kp N7      &kp N8             &kp N9           &kp N0  &trans
+&trans  &trans  &trans          &trans            &trans      &trans    &trans  &trans      &trans             &trans           &trans  &trans
+                                &trans            &trans      &trans    &trans  &trans      &trans
             >;
 
-            label = "Both";
+            label = "NUM";
+        };
+
+        ARROWS {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans          &kp DOWN_ARROW  &trans           &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans          &trans
+            >;
+
+            label = "ARROWS";
         };
     };
 
