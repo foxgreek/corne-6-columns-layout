@@ -10,9 +10,24 @@
 
 / {
     macros {
+        show_arrows_macro: show_arrows_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mo 4>;
+            label = "SHOW_ARROWS_MACRO";
+        };
     };
 
     behaviors {
+        show_arrows: show_arrows {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHOW_ARROWS";
+            bindings = <&show_arrows_macro>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            hold-trigger-key-positions = <16>;
+        };
     };
 
     keymap {
