@@ -45,10 +45,10 @@
 
         symr {
             bindings = <
-&none           &none          &kp LS(TAB)  &kp TAB          &none              &none     &none             &kp LS(N7)  &kp EXCLAMATION  &kp LS(MINUS)  &kp DELETE        &none
-&none           &kp BACKSPACE  &none        &kp LC(LS(TAB))  &kp LC(TAB)        &none     &kp LS(NUMBER_6)  &kp LS(N8)  &kp LS(N9)       &kp RA(N5)     &kp RA(NUMBER_6)  &none
-&kp LEFT_SHIFT  &none          &none        &kp LG(GRAVE)    &kp LG(LS(GRAVE))  &none     &kp RA(N7)        &kp RA(N8)  &kp RA(N9)       &none          &kp ESCAPE        &none
-                                            &trans           &trans             &trans    &kp LEFT_GUI      &trans      &trans
+&none           &none       &kp LS(TAB)  &kp TAB          &none              &none     &none             &kp LS(N7)  &kp EXCLAMATION  &kp LS(MINUS)  &kp BACKSPACE     &none
+&none           &kp DELETE  &none        &kp LC(LS(TAB))  &kp LC(TAB)        &none     &kp LS(NUMBER_6)  &kp LS(N8)  &kp LS(N9)       &kp RA(N5)     &kp RA(NUMBER_6)  &none
+&kp LEFT_SHIFT  &none       &none        &kp LG(GRAVE)    &kp LG(LS(GRAVE))  &none     &kp RA(N7)        &kp RA(N8)  &kp RA(N9)       &none          &kp ESCAPE        &none
+                                         &trans           &trans             &trans    &kp LEFT_GUI      &trans      &trans
             >;
 
             label = "SYM R";
