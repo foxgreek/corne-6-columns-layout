@@ -19,7 +19,7 @@
 
         option_save {
             bindings = <&kp LC(S)>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
         };
     };
 
